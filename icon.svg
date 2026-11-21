@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="-113.4 -113.4 226.8 226.8" role="img" aria-label="Hexagonal Front"><title>Hexagonal Front</title><svg x="-105" y="-100" width="210" height="200" viewBox="-105 -100 210 200"><g stroke-linejoin="round">
+<g transform="translate(0 0)"><polygon points="0,-32 27.71,-16 27.71,16 0,32 -27.71,16 -27.71,-16" fill="#FFFFE0" stroke="#FFFFE0" stroke-width="6"></polygon></g>
+<g transform="translate(69.28 0)"><polygon points="0,-32 27.71,-16 27.71,16 0,32 -27.71,16 -27.71,-16" fill="#8CA56D" stroke="#8CA56D" stroke-width="6"></polygon></g>
+<g transform="translate(34.64 60)"><polygon points="0,-32 27.71,-16 27.71,16 0,32 -27.71,16 -27.71,-16" fill="#5B6B7F" stroke="#5B6B7F" stroke-width="6"></polygon></g>
+<g transform="translate(-34.64 60)"><polygon points="0,-32 27.71,-16 27.71,16 0,32 -27.71,16 -27.71,-16" fill="#8CA56D" stroke="#8CA56D" stroke-width="6"></polygon></g>
+<g transform="translate(-69.28 0)"><polygon points="0,-32 27.71,-16 27.71,16 0,32 -27.71,16 -27.71,-16" fill="#5B6B7F" stroke="#5B6B7F" stroke-width="6"></polygon></g>
+<g transform="translate(-34.64 -60)"><polygon points="0,-32 27.71,-16 27.71,16 0,32 -27.71,16 -27.71,-16" fill="#8CA56D" stroke="#8CA56D" stroke-width="6"></polygon></g>
+<g transform="translate(34.64 -60)"><polygon points="0,-32 27.71,-16 27.71,16 0,32 -27.71,16 -27.71,-16" fill="none" stroke="#5B6B7F" stroke-width="5"></polygon></g>
+</g></svg></svg>

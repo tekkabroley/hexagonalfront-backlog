@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hexagonal Front · Backlog map</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-icon.png">
+<style>
+body{margin:0;font:14px system-ui,sans-serif;color:#1f2328;background:#fff}
+header{padding:12px 16px;border-bottom:1px solid #d0d7de;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+h1{font-size:16px;margin:0}
+#cy{height:70vh;min-height:360px;border-bottom:1px solid #d0d7de}
+.lg{margin-right:12px}.sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.sw.ready{background:#2da44e}.sw.blocked{background:#bf8700}.sw.in_progress{background:#0969da}.sw.closed{background:#8c959f}
+.chip{border:1px solid #d0d7de;background:#f6f8fa;border-radius:12px;padding:2px 10px;margin:2px;cursor:pointer;font-size:12px}
+.chip.on{background:#0969da;color:#fff;border-color:#0969da}
+.warn{background:#ffebe9;border:1px solid #cf222e;padding:8px 16px;margin:8px 16px;border-radius:6px}
+.empty{padding:48px 16px;text-align:center;color:#57606a}
+section,footer{padding:8px 16px}footer{color:#57606a;font-size:12px}
+#tip{position:fixed;display:none;background:#1f2328;color:#fff;padding:6px 8px;border-radius:6px;font-size:12px;white-space:pre-line;max-width:360px;pointer-events:none;z-index:10}
+@media (prefers-color-scheme:dark){body{background:#0d1117;color:#e6edf3}header,#cy{border-color:#30363d}.chip{background:#161b22;border-color:#30363d;color:#e6edf3}a{color:#58a6ff}}
+</style>
+</head>
+<body>
+<header>
+<h1>Backlog dependency map</h1>
+<input id="search" type="search" placeholder="Search issues" aria-label="Search issues">
+<div><span class="lg"><i class="sw ready"></i>Ready</span><span class="lg"><i class="sw blocked"></i>Blocked</span><span class="lg"><i class="sw in_progress"></i>In progress</span><span class="lg"><i class="sw closed"></i>Closed blocker</span></div>
+<div><button type="button" class="chip" data-label="ai-opponent">ai-opponent</button><button type="button" class="chip" data-label="enhancement">enhancement</button></div>
+</header>
+
+<div id="cy" role="img" aria-label="Issue dependency graph"></div>
+<section><h2>Unordered (no dependencies)</h2><ul><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/535" target="_blank" rel="noopener">#535</a> Art - Replace the victory condition images</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/544" target="_blank" rel="noopener">#544</a> Add a fog-of-war-safe computer opponent</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/545" target="_blank" rel="noopener">#545</a> Resolve game rules and AI engine contracts</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/546" target="_blank" rel="noopener">#546</a> Add indexed AI coordinate topology</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/547" target="_blank" rel="noopener">#547</a> Build pure headless ACTION simulator</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/548" target="_blank" rel="noopener">#548</a> Record deterministic AI replay logs</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/549" target="_blank" rel="noopener">#549</a> Add SQL versus TypeScript parity tests</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/550" target="_blank" rel="noopener">#550</a> Build observation and uncertain-reserve determinization</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/551" target="_blank" rel="noopener">#551</a> Add deterministic baseline bots and seeded self-play</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/552" target="_blank" rel="noopener">#552</a> Add heuristic procurement planning</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/553" target="_blank" rel="noopener">#553</a> Add skeleton-aware hidden deployment planning</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/554" target="_blank" rel="noopener">#554</a> Keep bot search off the UI thread</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/555" target="_blank" rel="noopener">#555</a> Support reliable bot workers and match lifecycle</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/556" target="_blank" rel="noopener">#556</a> Add evaluation and fog-of-war MCTS</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/557" target="_blank" rel="noopener">#557</a> Add self-play balance and AI tournament evaluation</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/618" target="_blank" rel="noopener">#618</a> Polish dev-database tooling: inconclusive probe label and env-var scan coverage</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/620" target="_blank" rel="noopener">#620</a> Triage dev/production schema drift found by diff:schema</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/621" target="_blank" rel="noopener">#621</a> Extend diff:schema coverage and verify untested dev-database paths</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/624" target="_blank" rel="noopener">#624</a> Resolve schema drift and complete dev-database tooling (epic)</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/649" target="_blank" rel="noopener">#649</a> Engine: hidden units can use abilities and group-move, auto-revealing atomically</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/650" target="_blank" rel="noopener">#650</a> UI: unified stack action menu (select units, then act) with hotkey shortcut</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/654" target="_blank" rel="noopener">#654</a> Rules: auto-generate a styled HTML rulebook from game-rules.md, show it on /rules and in an in-game Rules drawer</li><li><a href="https://github.com/tekkabroley/hexagonalfront/issues/682" target="_blank" rel="noopener">#682</a> Drop the client write policy on unit_stacks</li></ul></section>
+<footer>Last updated 2026-11-21T18:02:47.532Z · trigger pull_request_target</footer>
+<div id="tip"></div>
+<script id="graph-data" type="application/json">{"nodes":[{"number":512,"title":"Chore - update Barracks upgrade","url":"https://github.com/tekkabroley/hexagonalfront/issues/512","labels":[],"state":"open","status":"ready","column":0,"inCycle":false,"openBlockers":[]},{"number":531,"title":"Feature - Combined Arms event card","url":"https://github.com/tekkabroley/hexagonalfront/issues/531","labels":[],"state":"open","status":"ready","column":0,"inCycle":false,"openBlockers":[]},{"number":664,"title":"Rules v2 UI: HQ placement step","url":"https://github.com/tekkabroley/hexagonalfront/issues/664","labels":[],"state":"open","status":"ready","column":0,"inCycle":false,"openBlockers":[]},{"number":665,"title":"Rules v2 engine: Objective points, Hold Points / Stalemate / safety-cap endings, and remove VP scoring","url":"https://github.com/tekkabroley/hexagonalfront/issues/665","labels":[],"state":"open","status":"in_progress","column":0,"inCycle":false,"openBlockers":[]},{"number":666,"title":"Rules v2 UI: Objective markers, points HUD and Victory modal","url":"https://github.com/tekkabroley/hexagonalfront/issues/666","labels":[],"state":"open","status":"blocked","column":1,"inCycle":false,"openBlockers":[665]},{"number":667,"title":"Rules v2: a free reveal can complete a surround","url":"https://github.com/tekkabroley/hexagonalfront/issues/667","labels":[],"state":"open","status":"ready","column":0,"inCycle":false,"openBlockers":[]},{"number":668,"title":"Rules v2 (backlog): terrain and scenario maps — Impassable, Woods, Hill","url":"https://github.com/tekkabroley/hexagonalfront/issues/668","labels":[],"state":"open","status":"blocked","column":2,"inCycle":false,"openBlockers":[666]},{"number":661,"title":"Rules v2 engine: three-action turns, two-action opening, attack/ability once per unit per turn","url":"https://github.com/tekkabroley/hexagonalfront/issues/661","labels":[],"state":"closed","status":"closed","column":-1,"inCycle":false,"openBlockers":[]},{"number":659,"title":"Rules v2: combat Decisive result and Flank bonus","url":"https://github.com/tekkabroley/hexagonalfront/issues/659","labels":[],"state":"closed","status":"closed","column":-1,"inCycle":false,"openBlockers":[]},{"number":663,"title":"Rules v2 engine: HQ placement phase before Procurement","url":"https://github.com/tekkabroley/hexagonalfront/issues/663","labels":[],"state":"closed","status":"closed","column":-1,"inCycle":false,"openBlockers":[]},{"number":656,"title":"Rules v2: remove the Flag structure","url":"https://github.com/tekkabroley/hexagonalfront/issues/656","labels":[],"state":"closed","status":"closed","column":-1,"inCycle":false,"openBlockers":[]}],"edges":[{"from":661,"to":512,"closed":true},{"from":661,"to":531,"closed":true},{"from":659,"to":531,"closed":true},{"from":663,"to":664,"closed":true},{"from":656,"to":665,"closed":true},{"from":661,"to":665,"closed":true},{"from":665,"to":666,"closed":false},{"from":666,"to":668,"closed":false},{"from":661,"to":667,"closed":true}]}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.30.2/cytoscape.min.js" integrity="sha384-IWROdLKRsN1UuJywMlWl7/blXQ8GEooN2n7dzTxfEPd7ybYIKCUJ2Ol/1Gpf3YV4" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js" integrity="sha384-2IH3T69EIKYC4c+RXZifZRvaH5SRUdacJW7j6HtE5rQbvLhKKdawxq6vpIzJ7j9M" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.js" integrity="sha384-u69h9ebXeSjlg6q/rb1zKTRAGu/h8deCl0409xpS/QJctMKnc4M9Fzkm01VOQdeF" crossorigin="anonymous"></script>
+<script>
+const data = JSON.parse(document.getElementById('graph-data').textContent);
+const COLORS = { ready: '#2da44e', blocked: '#bf8700', in_progress: '#0969da', closed: '#8c959f' };
+const COL_W = 260;
+const tip = document.getElementById('tip');
+if (data.nodes.length > 0 && window.cytoscape) {
+  if (window.cytoscapeDagre) cytoscape.use(cytoscapeDagre);
+  const cy = cytoscape({
+    container: document.getElementById('cy'),
+    elements: [
+      ...data.nodes.map((n) => ({ data: { id: String(n.number), n, label: '#' + n.number + ' ' + (n.title.length > 34 ? n.title.slice(0, 33) + '…' : n.title), color: COLORS[n.status], status: n.status, inCycle: n.inCycle } })),
+      ...data.edges.map((e) => ({ data: { id: e.from + '-' + e.to, source: String(e.from), target: String(e.to), closed: e.closed } })),
+    ],
+    style: [
+      { selector: 'node', style: { label: 'data(label)', 'background-color': 'data(color)', color: '#1f2328', 'font-size': 11, 'text-valign': 'center', 'text-halign': 'center', shape: 'round-rectangle', width: 210, height: 34, 'text-wrap': 'none', 'text-max-width': 200, 'border-width': 2, 'border-color': '#fff' } },
+      { selector: 'node[status="closed"]', style: { opacity: 0.6 } },
+      { selector: 'node[?inCycle]', style: { 'border-color': '#cf222e', 'border-width': 3 } },
+      { selector: 'edge', style: { width: 1.5, 'line-color': '#57606a', 'target-arrow-color': '#57606a', 'target-arrow-shape': 'triangle', 'curve-style': 'bezier' } },
+      { selector: 'edge[?closed]', style: { 'line-color': '#c6cbd1', 'target-arrow-color': '#c6cbd1', 'line-style': 'dashed' } },
+      { selector: '.dimmed', style: { opacity: 0.12 } },
+    ],
+    layout: { name: 'dagre', rankDir: 'LR', nodeSep: 18, rankSep: 60 },
+    userZoomingEnabled: true,
+  });
+  // Snap x to the computed column so columns match topological depth.
+  cy.nodes().forEach((node) => {
+    node.position({ x: (node.data('n').column + 1) * COL_W, y: node.position('y') });
+  });
+  cy.fit(undefined, 30);
+  cy.on('tap', 'node', (ev) => window.open(ev.target.data('n').url, '_blank', 'noopener'));
+  cy.on('mouseover', 'node', (ev) => {
+    const n = ev.target.data('n');
+    tip.textContent = '#' + n.number + ' ' + n.title + (n.labels.length ? '\nLabels: ' + n.labels.join(', ') : '') + (n.openBlockers.length ? '\nBlocked by: ' + n.openBlockers.map((b) => '#' + b).join(', ') : '');
+    tip.style.display = 'block';
+  });
+  cy.on('mousemove', (ev) => {
+    const p = ev.originalEvent;
+    if (p) { tip.style.left = p.clientX + 14 + 'px'; tip.style.top = p.clientY + 14 + 'px'; }
+  });
+  cy.on('mouseout', 'node', () => { tip.style.display = 'none'; });
+
+  let query = '';
+  const active = new Set();
+  const apply = () => {
+    cy.nodes().forEach((node) => {
+      const n = node.data('n');
+      const text = ('#' + n.number + ' ' + n.title).toLowerCase();
+      const okQ = !query || text.includes(query);
+      const okL = active.size === 0 || n.labels.some((l) => active.has(l));
+      node.toggleClass('dimmed', !(okQ && okL));
+    });
+  };
+  document.getElementById('search').addEventListener('input', (e) => { query = e.target.value.trim().toLowerCase(); apply(); });
+  document.querySelectorAll('.chip').forEach((chip) => chip.addEventListener('click', () => {
+    const l = chip.dataset.label;
+    if (active.has(l)) active.delete(l); else active.add(l);
+    chip.classList.toggle('on', active.has(l));
+    apply();
+  }));
+}
+</script>
+</body>
+</html>
